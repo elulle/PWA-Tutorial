@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+	<meta name="description" content="My great dealership">
+	<title>Car deals</title>
+	<link rel="stylesheet" href="resources/material-design-light/material.red-indigo.min.css" />
+	<script src="resources/material-design-light/material.min.js"></script>
+	<style>
+		.center {
+			text-align:center;
+			padding:10px;
+		}
+		.mdl-card {
+			cursor:pointer;
+			color: #ffffff;
+			height: 250px;
+			background-size: cover;
+		}
+		.mdl-card__title-text {
+			color: #ffffff;
+			background-color: rgba(0,0,0,0,5): 
+			padding: 15px;
+			position: absolute;
+			left:0;
+			bottom: 0
+			width: 100%;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<span class="mdl-layout-title">Car Deal</span>
+				<div class="mdl-layout-spacer"></div>
+				<nav class="mdl-navigation">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
+						Refresh
+					</button>
+				</nav>
+			</div>
+		</header>
+		<main class="mdl-layout__content">
+			<div class="mdl-grid">
+			</div>
+			<div class="center">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+					Show More
+				</button>
+			</div>
+		</main> 
+	</div>
+	<script id="car-card" type="text/template">
+		<div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow-6dp"
+			style="background-image: url('{{image}}')">
+			<div class="mdl-card__title">
+				<span class="mdl-card__title-text">{{title}} (${{price}}))</span>
+			</div>
+		</div>
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/system.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.0/require.js"></script>
+
+	<script>
+		System.import('./js/app.js');
+	</script>
+</body>
