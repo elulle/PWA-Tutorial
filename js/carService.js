@@ -4,14 +4,29 @@ define(['./template.js', './clientStorage.js'], function(template, clientStorage
 	var apiUrlCar = apiUrlPath + 'car.php?carId=';
 
 	function loadMoreRequest(){
-		fetch(apiUrlLatest + '?carId=' + clientStorage.getLastCarId())
-		.then(function(response){
-			return response.json();
-		}).then(function(data){
-			clientStorage.addCars(data.cars)
-			.then(function(){
-				loadMore();
-			});
+		fetchPromise()
+		.then(function(){
+			loadMore();
+		})
+	}
+
+	function fetchPromise(){
+		return new Promise(function(resolve, reject){
+			fetch(apiUrlLatest + '?carId=' + clientStorage.getLastCarId())
+			.then(function(response){
+				return response.json();
+			}).then(function(data){
+				clientStorage.addCars(data.cars)
+				.then(function(){
+					data.cars.forEach(preCacheDetailsPage);
+					resolve("The connection is OK, showing latest results");
+				});
+			}).catch(function(e){
+				resolve("No connection, showing offline results");
+			})
+			setTimeout(function(){
+				resolve("The connection is hanging, showing offline results");
+			},3000);
 		})
 	}
 
@@ -30,6 +45,17 @@ define(['./template.js', './clientStorage.js'], function(template, clientStorage
 		}).catch(function(){
 			alert("Oops,can't find the car");
 		})
+	}
+
+	function preCacheDetailsPage(car){
+		if('serviceWorker' in navigator){
+			var carDetailsUrl = apiUrlCar + car.value.details_id;
+			window.caches.open('carDealsCachePagesV1').then(function(cache){
+				cache.mach(carDetailsUrl).then(function(response){
+					if(!response) cache.add(new Request (carDetailsUrl));
+				})
+			})
+		}
 	}
 
 	return {
