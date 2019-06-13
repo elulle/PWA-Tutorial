@@ -51,7 +51,7 @@ define(['./template.js', './clientStorage.js'], function(template, clientStorage
 		if('serviceWorker' in navigator){
 			var carDetailsUrl = apiUrlCar + car.value.details_id;
 			window.caches.open('carDealsCachePagesV1').then(function(cache){
-				cache.mach(carDetailsUrl).then(function(response){
+				cache.match(carDetailsUrl).then(function(response){
 					if(!response) cache.add(new Request (carDetailsUrl));
 				})
 			})
