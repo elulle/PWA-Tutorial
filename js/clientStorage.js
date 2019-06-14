@@ -17,6 +17,7 @@ define([], function(){
 	function getCars(){
 		return new Promise(function(resolve,reject){
 			carInstance.keys().then(function(keys){
+				// console.log("getCars", keys);
 				var index = keys.indexOf(lastItemId);
 				if(index == -1){ index = keys.length; }
 				if(index == 0){ resolve([]); return; }

@@ -19,6 +19,7 @@ var carDealsCacheFiles = [
 	'resources/material-design-light/material.min.js.map'
 ];
 
+// var latestPath = '../json/latest-deals.json';
 var latestPath = '/pluralsight/courses/progressive-web-apps/service/latest-deals.php';
 var imagePath = '/pluralsight/courses/progressive-web-apps/service/car-image.php';
 var carPath = '/pluralsight/courses/progressive-web-apps/service/car.php';

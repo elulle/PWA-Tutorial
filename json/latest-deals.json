@@ -1,0 +1,46 @@
+{
+  "cars": [
+    {
+      "key": 156041907517,
+      "value": {
+        "id": 156041907517,
+        "description": "",
+        "details_id": "AudiAllroad2001",
+        "unique_title": "AudiAllroad20011560419075",
+        "year": "2001",
+        "brand": "Audi",
+        "model": "Allroad",
+        "price": "12693",
+        "image": "https://bstavroulakis.com/pluralsight/courses/progressive-web-apps/service/car-image.php?title=AudiAllroad2001"
+      }
+    },
+    {
+      "key": 156041907516,
+      "value": {
+        "id": 156041907516,
+        "description": "",
+        "details_id": "LexusRX1999",
+        "unique_title": "LexusRX19991560419075",
+        "year": "1999",
+        "brand": "Lexus",
+        "model": "RX",
+        "price": "13421",
+        "image": "https://bstavroulakis.com/pluralsight/courses/progressive-web-apps/service/car-image.php?title=LexusRX1999"
+      }
+    },
+    {
+      "key": 156041907515,
+      "value": {
+        "id": 156041907515,
+        "description": "",
+        "details_id": "ToyotaCressida1992",
+        "unique_title": "ToyotaCressida19921560419075",
+        "year": "1992",
+        "brand": "Toyota",
+        "model": "Cressida",
+        "price": "7203",
+        "image": "https://bstavroulakis.com/pluralsight/courses/progressive-web-apps/service/car-image.php?title=ToyotaCressida1992"
+      }
+    }
+  ]
+}
